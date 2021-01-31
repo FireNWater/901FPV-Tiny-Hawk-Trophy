@@ -7,7 +7,7 @@ Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 #define DELAYVAL 500
 
 void setup() {
-
+  Serial.begin(9600);
   pixels.begin();
 }
 
@@ -22,4 +22,8 @@ void loop() {
     pixels.show();
     delay(DELAYVAL);
   }
+
+  Serial.print("Congratulations Dream_Z!!!\n");
+  delay(1000);
+  Serial.print("Current 901FPV Tiny Hawk Champiom!!!\n");
 }
