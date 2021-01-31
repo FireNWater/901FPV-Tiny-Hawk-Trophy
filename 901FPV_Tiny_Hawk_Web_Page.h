@@ -5,7 +5,7 @@ const char MAIN_page[] PROGMEM = R"=====(
 	</HEAD>
 <BODY>
 	<CENTER>
-        <B>901FPV Tiny Hawk Champiom!!</B>
+        <B>901FPV Tiny Hawk Champiom!!</B> <br>
 		<B>Dream_Z!!!</B>
 	</CENTER>	
 </BODY>
