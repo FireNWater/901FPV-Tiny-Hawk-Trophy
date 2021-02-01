@@ -43,7 +43,10 @@ void loop() {
   delay(DELAYVAL);
 
   for(int i=0; i<NUMPIXELS; i++) {
-    pixels.setPixelColor(i, pixels.Color(255, 250, 255));
+    int red = random(0,255);
+    int green = random(0,255);
+    int blue = random (0,255);
+    pixels.setPixelColor(i, pixels.Color(red, green, blue));
     pixels.show();
     delay(DELAYVAL);
   }
