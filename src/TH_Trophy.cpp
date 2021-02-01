@@ -2,7 +2,7 @@
 #include <WiFiClient.h>
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
-#include <901FPV_Tiny_Hawk_HTML_is_in_here.h>          //Modify this file to update current and past Champioms web page!!
+#include <901FPV_Tiny_Hawk_HTML.h>          //Modify this file to update current and past Champioms web page!!
 
 const char* ssid     = "901FPV_Fly_Fi";
 const char* password = "901FPV_Fly_Fi";
@@ -11,9 +11,9 @@ ESP8266WebServer server(80);
 
 #define PIN         12
 #define NUMPIXELS   8
+#define DELAYVAL 300
 
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
-#define DELAYVAL 300
 
 void handleRoot() {
   String message = MAIN_page;
@@ -39,14 +39,14 @@ void setup() {
 void loop() {
 
   pixels.clear();
+  
+  server.handleClient();                        // Web server
 
   delay(DELAYVAL);
 
   for(int i=0; i<NUMPIXELS; i++) {
-    int red = random(0,255);
-    int green = random(0,255);
-    int blue = random (0,255);
-    pixels.setPixelColor(i, pixels.Color(red, green, blue));
+
+    pixels.setPixelColor(i, pixels.Color(200, 250, 150));
     pixels.show();
     delay(DELAYVAL);
   }
@@ -55,5 +55,4 @@ void loop() {
   delay(1000);
   Serial.print("Current 901FPV Tiny Hawk Champiom!!!\n");
 
-  server.handleClient();                        // Web server
 }
