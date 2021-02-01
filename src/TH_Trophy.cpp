@@ -13,7 +13,7 @@ ESP8266WebServer server(80);
 #define NUMPIXELS   8
 
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
-#define DELAYVAL 500
+#define DELAYVAL 300
 
 void handleRoot() {
   String message = MAIN_page;
