@@ -38,7 +38,6 @@ void loop() {
   pixels.clear();
 
   for(int i=0; i<NUMPIXELS; i++) {
-
     pixels.setPixelColor(i, pixels.Color(random(255), random(255), random(255)));
     pixels.show();
     delay(DELAYVAL);
